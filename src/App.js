@@ -3,13 +3,14 @@ import ReactDom from "react-dom";
 import AddTransaction from "./AddTransaction";
 import "./App.css";
 import Balance from "./Balance";
+import { GlobalProvider } from "./GlobalState";
 import Header from "./Header";
 import IncomeExpense from "./IncomeExpense";
 import TransactionList from "./TransactionList";
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <div className="container">
         <Balance />
@@ -17,7 +18,7 @@ function App() {
         <TransactionList />
         <AddTransaction />
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 ReactDom.render(<App />, document.getElementById("root"));
